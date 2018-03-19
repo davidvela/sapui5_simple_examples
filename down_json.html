@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8">
+		
+		<title>Download JSON</title>
+		
+		<script src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js" 
+			id="sap-ui-bootstrap"
+			data-sap-ui-libs="sap.ui.core" 
+			data-sap-ui-theme="sap_belize"></script>
+			<!-- only load the main library "sap.m" and the Belize theme -->
+		
+		<script>
+			var json = {"My":"Json","is":"cool"};
+			var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(json));
+			
+			var btn = new sap.ui.core.HTML({
+				content:"<a href='data:"+data+"'  download ='/test/data.json'>Download Json</a>" 
+			});
+			btn.placeAt('content');
+		</script>
+		
+	</head>
+	<body id="content" class="sapUiBody">
+	</body>
+</html>
